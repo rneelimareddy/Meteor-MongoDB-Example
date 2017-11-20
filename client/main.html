@@ -1,0 +1,53 @@
+<head>
+  <title>Sample Mongo</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+  {{> list_tasks}}
+  {{> add_task}}
+  <br><br>
+  {{> find_task}}
+  <br>
+  {{> find_result}}
+  <br>
+  {{> update_task}}
+  <br>
+  <br>
+  {{> remove_task}}
+
+</body>
+
+<template name="add_task">
+  <input type = "text" class = "the_task">
+  <button class = "submit">Submit</button>
+</template>
+
+<template name="find_task">
+  <input type = "text" class = "the_find">
+  <button class = "find">Find</button><br>
+</template>
+
+<template name="find_result">
+  <span id="result"></span>
+</template>
+
+<template name="update_task">
+  ID : <input type = "text" class = "the_update">
+  Set Task: <input type = "text" class = "the_set">
+  <button class = "update">Update</button>
+</template>
+
+<template name="remove_task">
+  <input type = "text" class = "the_id">
+  <button class = "remove">Remove</button>
+</template>
+
+<template name= "list_tasks">
+  <ol>
+    {{#each all_tasks}}
+      <li> task : {{task}} </li>
+    {{/each}}
+  </ol>  
+</template>
+  
